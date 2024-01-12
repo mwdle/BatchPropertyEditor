@@ -4,7 +4,7 @@
 #### Date: 12/05/2023
 
 ## Purpose:
-This console application aims to simplify and significantly hasten the process of changing a specific property value in many property files.
+This interactive console application aims to simplify and significantly hasten the process of changing a specific property value in many property with just a few keystrokes.
 
 ## Definitions:
 * Property File: In the context of this application, a property file is a test file containing key-value pairs that are used to configure a program.
