@@ -12,7 +12,7 @@ This console application aims to simplify and significantly hasten the process o
 * Deep search: A type of search that looks for a file in a folder and all of its sub-folders.
 
 ## How To Use:
-
+** This has only been tested using a Java SDK of 17 and above **
 #### The application has informative prompts to guide you through using it, but if you are unsure of something you can always refer to this section.
 
 * Upon opening, you are prompted to specify a folder (ex: C:\someFolder) to do a deep search for property files in.
