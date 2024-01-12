@@ -17,21 +17,21 @@ public class BulkPropertyEditor {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Welcome to the Bulk Property File Editor!");
-        System.out.println("To get started, please enter the absolute path to your folder of AFT's (NOT case sensitive) (ex: C:\\Users\\Dave\\folderOfAFTs):");
+        System.out.println("To get started, please enter the absolute path of your folder to look in (NOT case sensitive) (ex: C:\\Users\\Dave\\someFolder):");
         System.out.println("NOTE: forward slashes have undefined behavior. Please follow the windows filesystem convention of using backslashes.");
-        String aftFolder = reader.readLine();
+        String userFolder = reader.readLine();
 
-        while (!aftFolder.matches("^(C|c):\\\\(.+ *\\\\?)+$")) {
-            System.out.println("Invalid path entered. Please enter a valid absolute path to your folder of AFT's (ex: C:\\Users\\Dave\\folderOfAFTs):");
-            aftFolder = reader.readLine();
+        while (!userFolder.matches("^(C|c):\\\\(.+ *\\\\?)+$")) {
+            System.out.println("Invalid path entered. Please enter a valid absolute path to your folder of AFT's (ex: C:\\Users\\Dave\\someFolder):");
+            userFolder = reader.readLine();
         }
-        if (aftFolder.charAt(aftFolder.length() -1) == '\\')
-            aftFolder = aftFolder.substring(0, aftFolder.length() - 1);
+        if (userFolder.charAt(userFolder.length() -1) == '\\')
+            userFolder = userFolder.substring(0, userFolder.length() - 1);
 
         // Create a File object for the directory
-        File aftDirectory = new File(aftFolder);
+        File userDirectory = new File(userFolder);
         // Check if the provided path is a directory
-        if (!aftDirectory.isDirectory()) {
+        if (!userDirectory.isDirectory()) {
             System.out.println("The directory path you provided was not found. Please rerun the program and try again.");
             System.exit(0);
         }
@@ -74,9 +74,9 @@ public class BulkPropertyEditor {
         System.out.println();
 
         if (option.equals("1"))
-            replacePropertyRecursive(aftDirectory, propertyFileName, propKey, propNewValue, true);
+            replacePropertyRecursive(, propertyFileName, propKey, propNewValue, true);
         else
-            replacePropertyRecursive(aftDirectory, propertyFileName, oldPropValue, propNewValue, false);
+            replacePropertyRecursive(, propertyFileName, oldPropValue, propNewValue, false);
 
         System.out.println();
         System.out.println("Modification complete. Successfully modified " + numberOfFilesModified + " files. Please check one of the property files to make sure the property was set correctly.");
