@@ -1,5 +1,5 @@
 
-# Bulk Property File Editor
+# Bulk Property Editor
 #### Author: Michael Wadley
 #### Date: 12/05/2023
 
