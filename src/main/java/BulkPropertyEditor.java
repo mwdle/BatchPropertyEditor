@@ -17,12 +17,12 @@ public class BulkPropertyEditor {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         System.out.println("Welcome to the Bulk Property File Editor!");
-        System.out.println("To get started, please enter the absolute path of your folder to look in (NOT case sensitive) (ex: C:\\Users\\Dave\\someFolder):");
+        System.out.println("To get started, please enter the absolute path of your folder to search in (NOT case sensitive) (ex: C:\\Users\\Dave\\someFolder):");
         System.out.println("NOTE: forward slashes have undefined behavior. Please follow the windows filesystem convention of using backslashes.");
         String userFolder = reader.readLine();
 
         while (!userFolder.matches("^(C|c):\\\\(.+ *\\\\?)+$")) {
-            System.out.println("Invalid path entered. Please enter a valid absolute path to your folder of AFT's (ex: C:\\Users\\Dave\\someFolder):");
+            System.out.println("Invalid path entered. Please enter a valid absolute path of your folder to search in (ex: C:\\Users\\Dave\\someFolder):");
             userFolder = reader.readLine();
         }
         if (userFolder.charAt(userFolder.length() -1) == '\\')
@@ -37,7 +37,7 @@ public class BulkPropertyEditor {
         }
 
         System.out.println();
-        System.out.println("Please enter the common name of the property files (ex: aft.properties):");
+        System.out.println("Please enter the common name of the property files (ex: user.properties):");
         String propertyFileName = reader.readLine();
 
         System.out.println();
