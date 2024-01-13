@@ -8,7 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class BulkPropertyEditor {
+public class BatchPropertyEditor {
 
     public static int numberOfFilesModified = 0;
 
@@ -37,8 +37,8 @@ public class BulkPropertyEditor {
         }
 
         System.out.println();
-        System.out.println("Please enter the common name of the property files (ex: user.properties):");
-        String propertyFileName = reader.readLine();
+        System.out.println("Please enter the common name of the property files or a regular expression to match by (ex: user.properties to modify files called user.properties or .+.properties to modify files ending with .properties):");
+        String propertyFileRegex = reader.readLine();
 
         System.out.println();
         System.out.println("There are two file modification modes:");
@@ -74,9 +74,9 @@ public class BulkPropertyEditor {
         System.out.println();
 
         if (option.equals("1"))
-            replacePropertyRecursive(, propertyFileName, propKey, propNewValue, true);
+            replacePropertyRecursive(userDirectory, propertyFileRegex, propKey, propNewValue, true);
         else
-            replacePropertyRecursive(, propertyFileName, oldPropValue, propNewValue, false);
+            replacePropertyRecursive(userDirectory, propertyFileRegex, oldPropValue, propNewValue, false);
 
         System.out.println();
         System.out.println("Modification complete. Successfully modified " + numberOfFilesModified + " files. Please check one of the property files to make sure the property was set correctly.");
@@ -93,10 +93,10 @@ public class BulkPropertyEditor {
                     replacePropertyRecursive(file, propFileName, propKeyOrOldValue, newPropValue, replaceByKey);
                 } else {
                     // Check if the current file matches the desired file name
-                    if (file.getName().equals(propFileName)) {
+                    if (file.getName().matches(propFileName)) {
                         try {
                             if (replaceByKey)
-                                replaceTextInFile(file, propKeyOrOldValue + " *= *(.+)", propKeyOrOldValue + "=" + newPropValue + "\n");
+                                replaceTextInFile(file, propKeyOrOldValue + " *= *(.+)", propKeyOrOldValue + "=" + newPropValue);
                             else replaceTextInFile(file, propKeyOrOldValue, newPropValue);
                         } catch (IOException e) {
                             System.out.println("Unknown error occurred writing to file. Please restart the program and try again.");
