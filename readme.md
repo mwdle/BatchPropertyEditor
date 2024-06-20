@@ -21,7 +21,7 @@ This interactive console application aims to simplify and significantly hasten t
   * **Warning:** This application is designed to work on Windows, this means all directory paths must be specified using backslashes (\\) instead of forward slashes (/). Application behavior with forward slashes is undefined and may result in errors.    <br><br>
   
 * You will then be prompted to enter the common name shared between the property files you want to modify (ex: aft.properties).
-  * Supports regex entry such as: .*\.properties (to match any file ending in .properties) or aft.properties (to match any file with exact name 'aft.properties')    <br><br>
+  * Supports regex entry such as: .*\\.properties (to match any file ending in .properties) or aft.properties (to match any file with exact name 'aft.properties')    <br><br>
 
 * Then you will be prompted to decide the file modification mode. There are two options:
   * Setting the value of a given key. This option means you must specify a key and a value. For example, you could specify a key 'db.password' and a value 'myDbPassword', then each property file containing the key 'db.password' would have its value set to 'myDbPassword'.
