@@ -16,7 +16,7 @@ This interactive console application aims to simplify and significantly hasten t
 **This has only been tested using a Java SDK of 17 and above**
 #### The application has informative prompts to guide you through using it, but if you are unsure of something you can always refer to this section.    <br><br>
 
-* Upon opening, you are prompted to specify a folder (ex: C:\someFolder) to do a deep search for property files in.
+* Upon opening, you are prompted to specify a folder (ex: C:\\someFolder) to do a deep search for property files in.
   * If you input an invalid directory path, you will be warned of an error and prompted to enter a valid directory.
   * **Warning:** This application is designed to work on Windows, this means all directory paths must be specified using backslashes (\\) instead of forward slashes (/). Application behavior with forward slashes is undefined and may result in errors.    <br><br>
   
