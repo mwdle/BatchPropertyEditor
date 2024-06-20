@@ -18,7 +18,7 @@ This interactive console application aims to simplify and significantly hasten t
 
 * Upon opening, you are prompted to specify a folder (ex: C:\someFolder) to do a deep search for property files in.
   * If you input an invalid directory path, you will be warned of an error and prompted to enter a valid directory.
-  * **Warning:** This application is designed to work on Windows, this means all directory paths must be specified using backslashes (\) instead of forward slashes (/). Application behavior with forward slashes is undefined and may result in errors.    <br><br>
+  * **Warning:** This application is designed to work on Windows, this means all directory paths must be specified using backslashes (\\) instead of forward slashes (/). Application behavior with forward slashes is undefined and may result in errors.    <br><br>
   
 * You will then be prompted to enter the common name shared between the property files you want to modify (ex: aft.properties).
   * Supports regex entry such as: .*\.properties (to match any file ending in .properties) or aft.properties (to match any file with exact name 'aft.properties')    <br><br>
