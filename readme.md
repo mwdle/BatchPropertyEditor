@@ -1,7 +1,7 @@
 
 # Bulk Property Editor  
 
-An interactive console application that aims to simplify and significantly hasten the process of changing a specific property value in many property or env files at once with just a few keystrokes.  
+An interactive console application that simplifies and significantly hastens the process of changing a specific property value in many property or env files at once with just a few keystrokes.  
 
 ## Table of Contents  
 
