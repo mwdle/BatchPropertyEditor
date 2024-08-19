@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
 
-public class BatchPropertyEditor {
+public class BulkPropertyEditor {
 
     private static Charset charset = StandardCharsets.UTF_8;
 
